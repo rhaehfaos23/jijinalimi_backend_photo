@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--이 파일은 notification.json에 *사이에 들어갈수 있는 인수를 기술한 파일입니다.-->
+<datas>
+    <kma>
+        <notity_type num="0">
+            <data type="class" target="EqkDataKma">
+                <members>
+                    <country default="kma" desc="이 데이터가 어느 나라 기상청 정보인가에 대한 정보" type="string"/>
+                    <uid desc="지진의 고유 ID" format="숫자 8자리(지진의발생날짜(년월일) + 발표일련번호)" type="string"/>
+                    <datetime desc="지진이 발생한 시각" format="년-월-일 시:분:초" type="string"/>
+                    <datetime_ann desc="지진 발표 시각" format="년-월-일 시:분:초" type="string"/>
+                    <location type="class" target="EqkLocationKma" note="알림 인수로는 자동으로 완전한 데이터가 들어가기 때문에 그냥 location으로만 쓸것">
+                        <wide desc="지진이 발생한 지역의 시/도명(북한의 경우 북한)" type="string"/>
+                        <city desc="지진이 발생한 도시 (북한의 경우 시/도 + 도시)" type="string"/>
+                        <direction desc="지진이 발생한 도시를 기준으로 한 방향" type="string"/>
+                        <distance desc="진앙지까지 거리" type="int" />
+                        <depth desc="진앙지까지 깊이" type="float" />
+                        <code desc="지역 코드" type="int" />
+                    </location>
+                    <coord type="class" target="EqkCoordKma" desc="지진이 발생한 지역의 좌표">
+                        <longitude desc="경도" type="float" />
+                        <latitude desc="위도" type="float" />
+                    </coord>
+                    <magnitude desc="지진 규모" type="float" />
+                    <max_intensity desc="지진 최대 진도" type="int" />
+                    <img_name desc="지진 지도 파일 이름" type="list" max_count="2"/>
+                    <img_url desc="지진 지도 이미지 url" type="list" max_count="2"/>
+                    <fctp desc="통보종류" type="string" />
+                    <region_intensity desc="지역별 최대 진대 모음" type="dict(지역:최대진도)" />
+                    <note desc="지진의 참고사항" type="string" />
+                </members>
+            </data>
+        </notity_type>
+    </kma>
+    <jma>
+        <notify_type num="ALL">
+            <data type="class" target="EqkDataJma">
+                <members>
+                    <country default="jma" type="string"/>
+                    <id desc="고유 id" type="string"/>
+                    <notify_type desc="알림 종류" type="int"/>
+                    <notify_type_text desc="알림 종류 텍스트" type="string"/>
+                    <img_url desc="지진 지도 이미지 url" type="string"/>
+                    <img_name desc="S3에 저장할때 쓸 이미지 파일 이름" type="string"/>
+                </members>
+            </data>
+        </notify_type>
+        <notify_type num="0 1 2">
+            <data type="class" target="EqkSingendoData">
+                <members>
+                    <sindo_data type="class" target="EqkSindoData">
+                        <max_intensity desc="최대 진도" type="int"/>
+                        <datetime_ann desc="발표 시각" type="string" format="년-월-일 시:분:초"/>
+                        <local_name_and_max_int desc="지역별 최대 진도" type="dict(지역:최대진도)"/>
+                    </sindo_data>
+                    <singen_data type="class" target="EqkSingenData">
+                        <datetime desc="지진이 발생한 시각" type="string" format="년-월-일 시:분:초"/>
+                        <datetime_ann desc="발표 시각" type="string" format="년-월-일 시:분:초"/>
+                        <hypocenter desc="진앙지" type="string"/>
+                        <coordinate desc="진앙지 좌표" type="class" target="EqkCoordinate">
+                            <latitude desc="위도" type="float"/>
+                            <longitude desc="경도" type="float"/>
+                            <depth desc="깊이" type="float"/>
+                        </coordinate>
+                        <magnitude desc="규모" type="float"/>
+                    </singen_data>
+                </members>
+            </data>
+        </notify_type>
+        <notify_type num="3">
+            <data type="class" target="EqkSindoData">
+                <members>
+                    <max_intensity desc="최대 진도" type="int"/>
+                    <datetime_ann desc="발표 시각" type="string" format="년-월-일 시:분:초"/>
+                    <local_name_and_max_int desc="지역별 최대 진도" type="dict(지역:최대진도)"/>
+                </members>
+            </data>
+        </notify_type>
+        <notify_case>
+            <case_0>case_0은 진앙지가 한국인 것으로 공표된 지진입니다</case_0>
+            <case_1>case_1은 진앙지가 한국인 것으로 추정되는 지진입니다</case_1>
+            <case_2>case_2은 진앙지가 한국 근처인 것으로 추정되는 지진입니다</case_2>
+            <case_3>case_3은 일본에서 감지된 진도속보에 관한 알림입니다</case_3>
+        </notify_case>
+    </jma>
+</datas>
+

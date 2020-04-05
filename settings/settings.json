@@ -1,0 +1,30 @@
+{
+  "notification_dry_run" : true,
+  "firebase_secret_key_json_file" : "",
+  "gcloud_secret_key_json_file" : "",
+  "credential_path" : "./credentials/",
+  "data_path" : "./data/",
+  "log_path" : "./data/",
+  "notification_log_file" : "notification.log",
+  "mailgun" : {
+    "mg_api_key" : "",
+    "sender" : "",
+    "recipient" : ["test@test.com"],
+    "domain" : ""
+  },
+  "aws" : {
+    "aws_access_key_id" : "",
+    "aws_secret_access_key" : "",
+    "region_name" : ""
+  },
+  "kma_setting" : {
+    "log_file_name": "kma.log",
+    "current_data_file_name": "current_id_kma.dat",
+    "sleep_time": 5
+  },
+  "jma_setting" : {
+    "log_file_name": "jma.log",
+    "current_data_file_name": "current_id_jma.dat",
+    "sleep_time": 5
+  }
+}

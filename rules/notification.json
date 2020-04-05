@@ -1,0 +1,155 @@
+{
+  "version": "3.0+1",
+  "comment": "*인수* 로 인수를 전달할 수 있습니다.",
+  "topics": {
+    "kma": "v3_kma",
+    "jma": "v3_jma",
+    "news": "v3_news"
+  },
+  "kma": {
+    "case_0": {
+      "comment": "case_0은 한국 기상청 지진 정보를 안내합니다.",
+      "ma": "KMA",
+      "case": "0",
+      "img_url": "*img_url.1*",
+      "img_name": "*img_name.1*",
+      "location": "*location.code*",
+      "magnitude": "*magnitude*",
+      "ko": {
+        "title": "한국 기상청 지진 정보 발표",
+        "message": "*datetime*에 *location*에서 M*magnitude*(최대 진도: *max_intensity*)의 지진이 발생하였습니다."
+      },
+      "ja": {
+        "title": "韓国気象庁からの地震情報発表",
+        "message": "*datetime*に*location*からM*magnitude*の地震が発生しました。"
+      },
+      "en": {
+        "title": "KMA EQ Information Updated",
+        "message": "There is an M*magnitude* earthquake on *location* at *datetime*."
+      },
+      "zh_Hans": {
+        "title": "韩国气象厅地震信息发布",
+        "message": "*datetime*，*location*发生了里氏*magnitude*级地震。"
+      },
+      "zh_Hant": {
+        "title": "韓國氣象廳地震信息發布",
+        "message": "*datetime*，*location*發生了里氏*magnitude*級地震。"
+      }
+    }
+  },
+  "jma": {
+    "case_0": {
+      "comment": "case_0은 진앙지가 한국인 것으로 공표된 지진입니다.",
+      "ma": "JMA",
+      "case": "0",
+      "img_url": "*img_url*",
+      "img_name": "*img_name*",
+      "location": "",
+      "magnitude": "*magnitude*",
+      "ko": {
+        "title": "일본 기상청 지진 정보 발표",
+        "message": "*datetime*에 한반도 남부지역에서 M*magnitude*의 지진이 발생하였습니다."
+      },
+      "ja": {
+        "title": "日本気象庁からの地震情報発表",
+        "message": "*datetime*に韓国からM*magnitude*の地震が発生しました。"
+      },
+      "en": {
+        "title": "JMA EQ Information Updated",
+        "message": "There is an M*magnitude* earthquake on South Korea at *datetime*."
+      },
+      "zh_Hans": {
+        "title": "日本气象厅地震信息发布",
+        "message": "*datetime*，韩国发生了里氏*magnitude*级地震。"
+      },
+      "zh_Hant": {
+        "title": "日本氣象廳地震信息發布",
+        "message": "*datetime*，韓國發生了里氏*magnitude*級地震。"
+      }
+    },
+    "case_1": {
+      "comment": "case_1은 진앙지가 한국인 것으로 추정되는 지진입니다.",
+      "ma": "JMA",
+      "case": "1",
+      "img_url": "*img_url*",
+      "img_name": "*img_name*",
+      "magnitude": "*magnitude*",
+      "ko": {
+        "title": "일본 기상청 정보 수신",
+        "message": "*datetime*에 한반도 근교 지역에서 지진이 발생했을 가능성이 있습니다. (발생 규모: M*magnitude*)"
+      },
+      "ja": {
+        "title": "日本気象庁からの情報受信",
+        "message": "*datetime*に韓国または近郊地域から地震が発生した可能性があります。（発生規模：M*magnitude*）"
+      },
+      "en": {
+        "title": "JMA EQ Checker",
+        "message": "There is a possibility that people can feel earthquake in South Korea. (*datetime* / M*magnitude*)"
+      },
+      "zh_Hans": {
+        "title": "从日本气象厅接收信息",
+        "message": "确认了韩国附近的地震。（*datetime*／M*magnitude*）"
+      },
+      "zh_Hant": {
+        "title": "從日本氣象廳接收信息",
+        "message": "確認了韓國附近的地震。（*datetime*／M*magnitude*）"
+      }
+    },
+    "case_2": {
+      "comment": "case_2은 진앙지가 한국 근처인 것으로 추정되는 지진입니다.",
+      "ma": "JMA",
+      "case": "2",
+      "img_url": "*img_url*",
+      "img_name": "*img_name*",
+      "magnitude": "*magnitude*",
+      "ko": {
+        "title": "일본 기상청 정보 수신",
+        "message": "*datetime*에 한반도에서 진도가 느껴질 수 있는 지진이 발생했을 가능성이 있습니다. (발생 규모: M*magnitude*)"
+      },
+      "ja": {
+        "title": "日本気象庁からの情報受信",
+        "message": "*datetime*に韓国から揺れを感じれる地震が発生した可能性があります。（発生規模：M*magnitude*）"
+      },
+      "en": {
+        "title": "JMA EQ Checker",
+        "message": "There is a possibility that people can feel earthquake in South Korea. (*datetime* / M*magnitude*)"
+      },
+      "zh_Hans": {
+        "title": "从日本气象厅接收信息",
+        "message": "确认了韩国附近的地震。（*datetime*／M*magnitude*）"
+      },
+      "zh_Hant": {
+        "title": "從日本氣象廳接收信息",
+        "message": "確認了韓國附近的地震。（*datetime*／M*magnitude*）"
+      }
+    },
+    "case_3": {
+      "comment": "case_3은 일본에서 감지된 진도속보에 관한 알림입니다",
+      "ma": "JMA",
+      "case": "3",
+      "img_url": "*img_url*",
+      "img_name": "*img_name*",
+      "magnitude": "*magnitude*",
+      "ko": {
+        "title": "일본 기상청 지진 속보",
+        "message": "일본 기상청에서 *datetime_ann*에 한국에서 지진이 감지될 정도의 지진 속보를 발표하였습니다."
+      },
+      "ja": {
+        "title": "日本気象庁からの地震速報",
+        "message": "日本気象庁から*datetime_ann*に、韓国で地震が検出されるほどの地震速報を発表しました。"
+      },
+      "en": {
+        "title": "JMA EQ Information Updated",
+        "message": "JMA announced information that there is an earthquake may be effected on South Korea at *datetime_ann*."
+      },
+      "zh_Hans": {
+        "title": "日本气象厅地震速报",
+        "message": "日本气象厅*datetime_ann*发布了地震预警，以检测韩国的地震。"
+      },
+      "zh_Hant": {
+        "title": "日本氣象廳地震速報",
+        "message": "日本氣象廳*datetime_ann*發布了地震預警，以檢測韓國的地震。"
+      }
+    }
+  }
+}
